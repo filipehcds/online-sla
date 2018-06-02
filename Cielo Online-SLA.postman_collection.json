@@ -1,0 +1,31 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Cielo Online-SLA",
+		"_postman_id": "390f3c04-ff83-cbe8-d35f-664436672002",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Calcular SLA",
+			"request": {
+				"url": "http://localhost:8081/sla-manutencao/v1/calcular",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n   \"nivelAtendimento\":\"0\",\n   \"codigoCliente\":\"10\",\n   \"areaGeografica\":\"G1\",\n   \"siglaModeloSolucao\":\"string\",\n   \"tipoSolucaoCaptura\":\"1\",\n   \"pacote\":\"1\",\n   \"segmento\":\"1\",\n   \"dadosEndereco\":{  \n      \"cidade\":\"string\",\n      \"estado\":\"string\"\n   },\n   \"listaDiaHorarioFuncionamento\":[{  \n         \"dia\":\"1\",\n         \"horarioInicial\":\"04:36:28\",\n         \"horarioFinal\":\"16:44:14\"\n   }],\n   \"isHorarioFuncionamentoIdentificado\":\"false\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
