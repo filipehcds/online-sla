@@ -1,0 +1,40 @@
+spring:  
+  profiles: runtime
+  application:    
+    name: online-sla
+  datasource:    
+    url: jdbc:sqlserver://${DB_IP};databaseName=${DB_SCHEMA};sendTimeAsDateTime=false    
+    schema-username: ${DB_SCHEMA}    
+    username: ${DB_USER}    
+    password: ${DB_PASS}    
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver  
+  jpa:    
+    database-platform: org.hibernate.dialect.SQLServer2012Dialect    
+    show-sql: false
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+    default-property-inclusion: NON_NULL
+server:  
+  port: 8080
+---
+spring:  
+  profiles: local
+  application:    
+    name: online-sla
+  datasource:    
+    url: jdbc:sqlserver://${DB_IP_LOCAL};databaseName=${DB_SCHEMA_LOCAL};sendTimeAsDateTime=false    
+    schema-username: ${DB_SCHEMA_LOCAL}
+    username: ${DB_USER_LOCAL}
+    password: ${DB_PASS_LOCAL}
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver  
+  jpa:    
+    database-platform: org.hibernate.dialect.SQLServer2012Dialect    
+    show-sql: true
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+    default-property-inclusion: NON_NULL
+server:  
+  port: 8081
+  
