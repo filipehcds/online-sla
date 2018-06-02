@@ -35,4 +35,22 @@ public interface ParametrizacaoSlaRepository extends JpaRepository<Parametrizaca
 			@Param("estado") String estado,
 			@Param("codigoNivelAtendimento") Integer codigoNivelAtendimento);
 	
+	/**
+	 * Obtem a quantidade de horas de SLA com base nos filtros informados
+	 * 
+	 * @param localizacao
+	 * @param solucaoCaptura
+	 * @param pacote
+	 * @param nivelAtendimento
+	 * @param segmento
+	 * @return
+	 */
+	@Query(nativeQuery = true)
+	List obterQuantidadeHorasSla(
+			@Param("localizacao") String localizacao, 
+			@Param("solucaoCaptura") Integer solucaoCaptura,
+			@Param("pacote") Integer pacote,
+			@Param("nivelAtendimento") Integer nivelAtendimento,
+			@Param("segmento") Integer segmento);
+	
 }

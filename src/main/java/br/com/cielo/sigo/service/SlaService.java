@@ -64,6 +64,7 @@ public class SlaService {
 	 * @param slaDTO
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	public SlaDTO calcularSla(SlaDTO slaDTO) {
 		
 		// obtém a lista de feriados federais, estaduais e federais
@@ -72,14 +73,19 @@ public class SlaService {
 		
 		LOG.debug("ABERTURA DO CHAMADO: " + dataHoraAbertura.format(formatter));
 
-		// obtem a quantidade de horas de SLA com base no filtro informado
-		List<ParametrizacaoSlaDTO> listaParametrizacaoSla = parametrizacaoSlaRepository.obterParametrizacaoSla(
+		/* List<ParametrizacaoSlaDTO> listaParametrizacaoSla = parametrizacaoSlaRepository.obterParametrizacaoSla(
 				slaDTO.getCodigoCliente(), 
 				slaDTO.getSiglaModeloSolucao(), 
 				slaDTO.getDadosEndereco().getCidade(), 
 				slaDTO.getDadosEndereco().getEstado(),
-				slaDTO.getNivelAtendimento().getCodigo());
-		
+				slaDTO.getNivelAtendimento().getCodigo()); */
+		// obtem a quantidade de horas de SLA com base no filtro informado
+		List<ParametrizacaoSlaDTO> listaParametrizacaoSla = parametrizacaoSlaRepository.obterQuantidadeHorasSla(
+				slaDTO.getAreaGeografica(),
+				Integer.parseInt(slaDTO.getTipoSolucaoCaptura()),
+				Integer.parseInt(slaDTO.getPacote()),
+				slaDTO.getNivelAtendimento().getCodigo(),
+				Integer.parseInt(slaDTO.getSegmento()));
 		if (listaParametrizacaoSla.isEmpty()) {
 			
 			throw new SlaNaoEncontradoException(ErrosEnum.SLA_NAO_IDENTIFICADO, messageSource);

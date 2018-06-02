@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: br.com.cielo.sigo.service.SlaServiceTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.359 s - in br.com.cielo.sigo.service.SlaServiceTest

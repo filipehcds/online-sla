@@ -21,6 +21,18 @@ public class SlaDTO {
 
 	@NotEmpty
 	private String siglaModeloSolucao;
+	
+	@NotEmpty
+	private String areaGeografica;
+	
+	@NotEmpty
+	private String tipoSolucaoCaptura;
+	
+	@NotEmpty
+	private String pacote;
+	
+	@NotEmpty
+	private String segmento;
 
 	@Valid
 	@NotNull
@@ -119,6 +131,38 @@ public class SlaDTO {
 		this.tipoServico = tipoServico;
 	}
 
+	public String getAreaGeografica() {
+		return areaGeografica;
+	}
+
+	public void setAreaGeografica(String areaGeografica) {
+		this.areaGeografica = areaGeografica;
+	}
+
+	public String getTipoSolucaoCaptura() {
+		return tipoSolucaoCaptura;
+	}
+
+	public void setTipoSolucaoCaptura(String tipoSolucaoCaptura) {
+		this.tipoSolucaoCaptura = tipoSolucaoCaptura;
+	}
+
+	public String getPacote() {
+		return pacote;
+	}
+
+	public void setPacote(String pacote) {
+		this.pacote = pacote;
+	}
+
+	public String getSegmento() {
+		return segmento;
+	}
+
+	public void setSegmento(String segmento) {
+		this.segmento = segmento;
+	}
+
 	public Boolean isHorarioFuncionamentoIdentificado() {
 		return isHorarioFuncionamentoIdentificado;
 	}
@@ -138,11 +182,13 @@ public class SlaDTO {
 	@Override
 	public String toString() {
 		return "SlaDTO [nivelAtendimento=" + nivelAtendimento + ", codigoCliente=" + codigoCliente
-				+ ", siglaModeloSolucao=" + siglaModeloSolucao + ", dadosEndereco=" + dadosEndereco
-				+ ", listaDiaHorarioFuncionamento=" + listaDiaHorarioFuncionamento + ", tipoServico=" + tipoServico
-				+ ", isHorarioFuncionamentoIdentificado=" + isHorarioFuncionamentoIdentificado + ", dataHoraPrevista="
-				+ dataHoraPrevista + ", quantidadeHorasUteis=" + quantidadeHorasUteis + ", quantidadeDiasUteis="
-				+ quantidadeDiasUteis + "]";
+				+ ", siglaModeloSolucao=" + siglaModeloSolucao + ", areaGeografica=" + areaGeografica
+				+ ", tipoSolucaoCaptura=" + tipoSolucaoCaptura + ", pacote=" + pacote + ", segmento=" + segmento
+				+ ", dadosEndereco=" + dadosEndereco + ", listaDiaHorarioFuncionamento=" + listaDiaHorarioFuncionamento
+				+ ", tipoServico=" + tipoServico + ", isHorarioFuncionamentoIdentificado="
+				+ isHorarioFuncionamentoIdentificado + ", dataHoraPrevista=" + dataHoraPrevista
+				+ ", quantidadeHorasUteis=" + quantidadeHorasUteis + ", quantidadeDiasUteis=" + quantidadeDiasUteis
+				+ "]";
 	}
 
 }

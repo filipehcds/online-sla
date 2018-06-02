@@ -71,6 +71,11 @@ public class ParametrizacaoSlaDTO {
 	public ParametrizacaoSlaDTO() {
 	}
 	
+	public ParametrizacaoSlaDTO(Integer quantidadeHorasSla) {
+		super();
+		this.quantidadeHorasSla = quantidadeHorasSla;
+	}
+	
 	public ParametrizacaoSlaDTO(Long codigoCliente, String nomeFantasia, String razaoSocial, Integer codigoPacote,
 			Integer codigoSegmento, String siglaClasseFaturamento, String siglaModeloSolucao, String grupoModeloSolucao,
 			String cidade, String estado, String nivelAtendimento, Integer quantidadeHorasSla) {
