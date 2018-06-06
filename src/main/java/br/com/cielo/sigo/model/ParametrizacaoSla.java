@@ -63,7 +63,7 @@ import br.com.cielo.sigo.dto.ParametrizacaoSlaDTO;
 			query = "SELECT\r\n" +
 					"    qt_hora_sla AS quantidadeHorasSla\r\n" +
 					"FROM\r\n" +
-					"    sigd.tbsigdr_mtrz_sla_mdlo_slco\r\n" +
+					"    sigd.tbsigdr_mtrz_sla_mnut\r\n" +
 					"WHERE\r\n" +
 					"    cd_grpo_area_gegf = :localizacao\r\n" +
 					"    AND cd_tipo_hdwr_eqpm = :solucaoCaptura\r\n" +
