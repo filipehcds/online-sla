@@ -1,5 +1,7 @@
 package br.com.cielo.sigo.service;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -16,6 +18,7 @@ import br.com.cielo.sigo.dto.DiaHorarioFuncionamentoDTO;
 import br.com.cielo.sigo.dto.ParametrizacaoSlaDTO;
 import br.com.cielo.sigo.dto.SlaDTO;
 import br.com.cielo.sigo.model.DiaSemanaEnum;
+import br.com.cielo.sigo.model.NivelAtendimentoEnum;
 import br.com.cielo.sigo.repository.ParametrizacaoSlaRepository;
 import br.com.cielo.sigo.service.exception.ErrosEnum;
 import br.com.cielo.sigo.service.exception.SlaNaoEncontradoException;
@@ -34,6 +37,8 @@ public class SlaService {
 	 * Logger
 	 */
 	private static final Logger LOG = Logger.getLogger(SlaService.class);
+	
+	private static float hrAdicionalN2 = 0;
 	
 	/**
 	 * Serviço de feriado
@@ -105,7 +110,11 @@ public class SlaService {
 		}
 		
 		// calcula o prazo de atendimento do chamado
-		SlaDTO sla = calcularSLA(dataHoraAbertura, slaDTO.getListaDiaHorarioFuncionamento(), quantidadeHorasSla, listaFeriados);		
+		SlaDTO sla = calcularSLA(dataHoraAbertura, slaDTO.getListaDiaHorarioFuncionamento(), quantidadeHorasSla, listaFeriados);
+		
+		if (slaDTO.getNivelAtendimento().getCodigo().equals(NivelAtendimentoEnum.SEGUNDO_NIVEL.getCodigo()))
+//			sla.setDataHoraPrevista(sla.getDataHoraPrevista().plusHours(horaDif));
+		
 		LOG.debug("PRAZO DE ATEDIMENTO DO CHAMADO: " + sla.getDataHoraPrevista().format(formatter));
 		
 		return sla;
@@ -172,7 +181,7 @@ public class SlaService {
 		}
 		
 		// adicona uma hora para cada sla
-		for (int i = 0; i < quantidadeHorasSLA; i++) {			
+		for (int i = 0; i < quantidadeHorasSLA + hrAdicionalN2; i++) {			
 			
 			// a partir da segunda hora, igualar a dataHoraUtil para identificar quando a proxima hora for em outro dia 
 			if (i > 0) {
@@ -265,6 +274,13 @@ public class SlaService {
 				// calcula a diferenca em minutos, que será descontada na primeira hora, de um horario de funcionamento valido
 				long duration = Duration.between(dataHoraCalculada, LocalDateTime.of(dataHoraCalculada.toLocalDate(), horarioFinalFuncionamento)).toMinutes();				
 				restante = duration;
+				
+				// Solução de contorno para adicionar 1 hora adicional no segundo nivel quando o cliente tem o horário de expediente após as 22:00
+				DecimalFormat df = new DecimalFormat("#");
+				df.setRoundingMode(RoundingMode.CEILING);
+				hrAdicionalN2 = Float.valueOf(df.format((duration / 60F)));
+				
+				LOG.debug("HORAS ADICIONAIS NIVEL 2: " + hrAdicionalN2);
 				LOG.debug("DIFERENCA: " + duration);
 				
 			}		
@@ -317,7 +333,6 @@ public class SlaService {
 		boolean feriadoEncontrado = listaFeriados.contains(dataHoraAbertura.toLocalDate());
 		LocalTime horaAbertura = dataHoraAbertura.toLocalTime();
 		
-		// Paulão
 		if(DiaSemanaEnum.obterDayOfWeek(horarioFuncionamento.getDia().getNumeroDia()).equals(dataHoraAbertura.getDayOfWeek())) {
 			
 			if (horaAbertura == null || horarioInicialFuncionamento == null || horarioFinalFuncionamento == null || feriadoEncontrado) {
