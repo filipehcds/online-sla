@@ -157,7 +157,7 @@ public class SlaService {
 		
 		// com o horario de funcionamento valido para começar a adicionar hora, valida está fora do horário comercial
 		// se estiver, posiciona a dataHora base para o horario que o estabelecimento abre
-		if (!isHorarioComercial(dataHoraAbertura, horarioInicialFuncionamento, horarioFinalFuncionamento, listaFeriados)) {
+		if (!isHorarioComercial(dataHoraAbertura, horarioInicialFuncionamento, horarioFinalFuncionamento, listaFeriados, horarioFuncionamento)) {
 			
 			dataHoraCalculada = LocalDateTime.of(dataHoraCalculada.toLocalDate(), horarioInicialFuncionamento);
 			quantidadeDiasUteis++;
@@ -227,13 +227,15 @@ public class SlaService {
 		LocalTime horarioFinalFuncionamento = horarioFuncionamento.getHorarioFinal();
 		
 		// com a dataHora base, valida se é possível adicionar uma hora do prazo de atendimento, dentro do horário de funcionamento				
-		if (isHorarioComercial(dataHoraCalculada.plusHours(1), horarioInicialFuncionamento, horarioFinalFuncionamento, listaFeriados)) {
+		if (isHorarioComercial(dataHoraCalculada.plusHours(1), horarioInicialFuncionamento, horarioFinalFuncionamento, listaFeriados, horarioFuncionamento)) {
 			
 			// antes de adicionar uma hora, recupera a primeira hora válida, menos uma
 			LocalTime primeiraHora = dataHoraCalculada.toLocalTime().minusHours(1);
+//			LocalTime primeiraHora = horarioInicialFuncionamento.minusHours(1);
 			
 			// se a posição a primeria hora valida do horario de funcionamento
 			if (primeiraHora.isBefore(horarioInicialFuncionamento) && dataHoraCalculada.toLocalTime().isBefore(horarioInicialFuncionamento)) {
+//			if (primeiraHora.isBefore(horarioInicialFuncionamento)) {
 				
 				// verifica se no dia anterior sobrou minutos para ser considerado na primeira hora
 				if (restante == 0) {
@@ -308,22 +310,26 @@ public class SlaService {
 	 * @param listaFeriados
 	 * @return
 	 */
-	private boolean isHorarioComercial(LocalDateTime dataHoraAbertura,
-			LocalTime horarioInicialFuncionamento, LocalTime horarioFinalFuncionamento, List<LocalDate> listaFeriados) {
+	private boolean isHorarioComercial(LocalDateTime dataHoraAbertura, 
+			LocalTime horarioInicialFuncionamento, LocalTime horarioFinalFuncionamento, List<LocalDate> listaFeriados, DiaHorarioFuncionamentoDTO horarioFuncionamento) {
 		
 		boolean horarioComercialValido = false;
 		boolean feriadoEncontrado = listaFeriados.contains(dataHoraAbertura.toLocalDate());
 		LocalTime horaAbertura = dataHoraAbertura.toLocalTime();
 		
-		if (horaAbertura == null || horarioInicialFuncionamento == null || horarioFinalFuncionamento == null || feriadoEncontrado) {
+		// Paulão
+		if(DiaSemanaEnum.obterDayOfWeek(horarioFuncionamento.getDia().getNumeroDia()).equals(dataHoraAbertura.getDayOfWeek())) {
 			
-			horarioComercialValido = false;
-			
-		} else {
-			
-			horarioComercialValido = horaAbertura.equals(horarioFinalFuncionamento) || 
-					(horaAbertura.isAfter(horarioInicialFuncionamento) && horaAbertura.isBefore(horarioFinalFuncionamento));
-			
+			if (horaAbertura == null || horarioInicialFuncionamento == null || horarioFinalFuncionamento == null || feriadoEncontrado) {
+				
+				horarioComercialValido = false;
+				
+			} else {
+				
+				horarioComercialValido = horaAbertura.equals(horarioFinalFuncionamento) || 
+						(horaAbertura.isAfter(horarioInicialFuncionamento) && horaAbertura.isBefore(horarioFinalFuncionamento));
+				
+			}
 		}
 		
 		return horarioComercialValido;

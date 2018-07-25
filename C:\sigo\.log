@@ -1021,3 +1021,601 @@ br.com.cielo.sigo.service.exception.SlaNaoEncontradoException: Não foi identifi
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
+2018-07-23 10:11:07 ERROR LogisticaExceptionHandler:49 - JSON parse error: Cannot deserialize value of type `br.com.cielo.sigo.model.DiaSemanaEnum` from String "TERÇA": value not one of declared Enum instance names: [QUARTA, SEXTA, QUINTA, SABADO, SEGUNDA, DOMINGO, NA, TERCA]; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `br.com.cielo.sigo.model.DiaSemanaEnum` from String "TERÇA": value not one of declared Enum instance names: [QUARTA, SEXTA, QUINTA, SABADO, SEGUNDA, DOMINGO, NA, TERCA]
+ at [Source: (PushbackInputStream); line: 14, column: 16] (through reference chain: br.com.cielo.sigo.dto.SlaDTO["listaDiaHorarioFuncionamento"]->java.util.ArrayList[0]->br.com.cielo.sigo.dto.DiaHorarioFuncionamentoDTO["dia"])
+org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `br.com.cielo.sigo.model.DiaSemanaEnum` from String "TERÇA": value not one of declared Enum instance names: [QUARTA, SEXTA, QUINTA, SABADO, SEGUNDA, DOMINGO, NA, TERCA]; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `br.com.cielo.sigo.model.DiaSemanaEnum` from String "TERÇA": value not one of declared Enum instance names: [QUARTA, SEXTA, QUINTA, SABADO, SEGUNDA, DOMINGO, NA, TERCA]
+ at [Source: (PushbackInputStream); line: 14, column: 16] (through reference chain: br.com.cielo.sigo.dto.SlaDTO["listaDiaHorarioFuncionamento"]->java.util.ArrayList[0]->br.com.cielo.sigo.dto.DiaHorarioFuncionamentoDTO["dia"])
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:241)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:223)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:206)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:157)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:130)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:124)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:161)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:131)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:870)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:776)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:881)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:855)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:158)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:126)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:111)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:84)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `br.com.cielo.sigo.model.DiaSemanaEnum` from String "TERÇA": value not one of declared Enum instance names: [QUARTA, SEXTA, QUINTA, SABADO, SEGUNDA, DOMINGO, NA, TERCA]
+ at [Source: (PushbackInputStream); line: 14, column: 16] (through reference chain: br.com.cielo.sigo.dto.SlaDTO["listaDiaHorarioFuncionamento"]->java.util.ArrayList[0]->br.com.cielo.sigo.dto.DiaHorarioFuncionamentoDTO["dia"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1548)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:910)
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._deserializeAltString(EnumDeserializer.java:255)
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer.deserialize(EnumDeserializer.java:179)
+	at com.fasterxml.jackson.databind.deser.impl.FieldProperty.deserializeAndSet(FieldProperty.java:136)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:369)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:159)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:286)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:245)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:127)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:369)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:159)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4001)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3072)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:235)
+	... 65 more
+2018-07-23 10:23:15 ERROR SlaManutencaoResource:71 - Não foi identificado parametrização de SLA para os critérios informados
+br.com.cielo.sigo.service.exception.SlaNaoEncontradoException: Não foi identificado parametrização de SLA para os critérios informados
+	at br.com.cielo.sigo.service.SlaService.calcularSla(SlaService.java:91)
+	at br.com.cielo.sigo.resource.SlaManutencaoResource.calcularSla(SlaManutencaoResource.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:870)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:776)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:881)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:855)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:158)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:126)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:111)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:84)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018-07-23 10:34:41 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-23 (Seg) 10:34
+2018-07-23 10:34:41 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-23 (Seg) 10:34
+2018-07-23 10:34:41 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-24 (Ter) 11:34
+2018-07-23 10:34:41 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-24 (Ter) 11:34
+2018-07-23 10:34:41 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-24 (Ter) 12:34
+2018-07-23 10:34:41 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-24 (Ter) 12:34
+2018-07-23 10:34:41 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-24 (Ter) 13:34
+2018-07-23 10:34:41 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-24 (Ter) 13:34
+2018-07-23 10:34:41 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-24 (Ter) 14:34
+2018-07-23 10:34:41 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-24 (Ter) 14:34
+2018-07-23 10:34:41 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-24 (Ter) 15:34
+2018-07-23 10:34:41 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-24 (Ter) 15:34
+2018-07-23 10:34:41 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-23 10:34:41 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-23 10:34:41 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 0
+2018-07-23 10:34:41 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 0
+2018-07-23 10:34:41 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-24 (Ter) 15:34
+2018-07-23 10:34:41 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-24 (Ter) 15:34
+2018-07-23 10:37:41 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-23 (Seg) 10:37
+2018-07-23 10:37:41 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-24 (Ter) 11:37
+2018-07-23 10:37:41 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-24 (Ter) 12:37
+2018-07-23 10:37:41 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-24 (Ter) 13:37
+2018-07-23 10:37:41 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-24 (Ter) 14:37
+2018-07-23 10:37:41 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-24 (Ter) 15:37
+2018-07-23 10:37:41 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-23 10:37:41 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 0
+2018-07-23 10:37:41 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-24 (Ter) 15:37
+2018-07-23 10:55:01 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-23 (Seg) 10:55
+2018-07-23 10:55:01 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-24 (Ter) 11:55
+2018-07-23 10:55:01 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-24 (Ter) 12:55
+2018-07-23 10:55:01 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-24 (Ter) 13:55
+2018-07-23 10:55:01 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-24 (Ter) 14:55
+2018-07-23 10:55:01 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-24 (Ter) 15:55
+2018-07-23 10:55:01 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-23 10:55:01 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 0
+2018-07-23 10:55:01 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-24 (Ter) 15:55
+2018-07-23 10:55:10 ERROR LogisticaExceptionHandler:49 - JSON parse error: Cannot deserialize value of type `br.com.cielo.sigo.model.NivelAtendimentoEnum` from String "2": value not one of declared Enum instance names: [SEGUNDO_NIVEL, EM_CAMPO]; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `br.com.cielo.sigo.model.NivelAtendimentoEnum` from String "2": value not one of declared Enum instance names: [SEGUNDO_NIVEL, EM_CAMPO]
+ at [Source: (PushbackInputStream); line: 2, column: 23] (through reference chain: br.com.cielo.sigo.dto.SlaDTO["nivelAtendimento"])
+org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `br.com.cielo.sigo.model.NivelAtendimentoEnum` from String "2": value not one of declared Enum instance names: [SEGUNDO_NIVEL, EM_CAMPO]; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `br.com.cielo.sigo.model.NivelAtendimentoEnum` from String "2": value not one of declared Enum instance names: [SEGUNDO_NIVEL, EM_CAMPO]
+ at [Source: (PushbackInputStream); line: 2, column: 23] (through reference chain: br.com.cielo.sigo.dto.SlaDTO["nivelAtendimento"])
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:241)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:223)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:206)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:157)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:130)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:124)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:161)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:131)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:870)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:776)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:881)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:855)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:158)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:126)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:111)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:84)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `br.com.cielo.sigo.model.NivelAtendimentoEnum` from String "2": value not one of declared Enum instance names: [SEGUNDO_NIVEL, EM_CAMPO]
+ at [Source: (PushbackInputStream); line: 2, column: 23] (through reference chain: br.com.cielo.sigo.dto.SlaDTO["nivelAtendimento"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1548)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:910)
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._deserializeAltString(EnumDeserializer.java:255)
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer.deserialize(EnumDeserializer.java:179)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:127)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:369)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:159)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4001)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3072)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:235)
+	... 65 more
+2018-07-23 10:55:15 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-23 (Seg) 10:55
+2018-07-23 10:55:15 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-24 (Ter) 11:55
+2018-07-23 10:55:15 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-24 (Ter) 12:55
+2018-07-23 10:55:15 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-24 (Ter) 13:55
+2018-07-23 10:55:15 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-24 (Ter) 14:55
+2018-07-23 10:55:15 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-24 (Ter) 15:55
+2018-07-23 10:55:15 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-23 10:55:15 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 0
+2018-07-23 10:55:15 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-24 (Ter) 15:55
+2018-07-23 10:55:20 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-23 (Seg) 10:55
+2018-07-23 10:55:20 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-24 (Ter) 11:55
+2018-07-23 10:55:20 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-24 (Ter) 12:55
+2018-07-23 10:55:20 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-24 (Ter) 13:55
+2018-07-23 10:55:20 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-24 (Ter) 14:55
+2018-07-23 10:55:20 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-24 (Ter) 15:55
+2018-07-23 10:55:20 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-23 10:55:20 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 0
+2018-07-23 10:55:20 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-24 (Ter) 15:55
+2018-07-23 10:55:39 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-23 (Seg) 10:55
+2018-07-23 10:55:39 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-24 (Ter) 11:55
+2018-07-23 10:55:39 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-24 (Ter) 12:55
+2018-07-23 10:55:39 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-24 (Ter) 13:55
+2018-07-23 10:55:39 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-24 (Ter) 14:55
+2018-07-23 10:55:39 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-24 (Ter) 15:55
+2018-07-23 10:55:39 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-23 10:55:39 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 0
+2018-07-23 10:55:39 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-24 (Ter) 15:55
+2018-07-23 10:55:59 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-23 (Seg) 10:55
+2018-07-23 10:55:59 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-24 (Ter) 11:55
+2018-07-23 10:55:59 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-24 (Ter) 12:55
+2018-07-23 10:55:59 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-24 (Ter) 13:55
+2018-07-23 10:55:59 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-24 (Ter) 14:55
+2018-07-23 10:55:59 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-24 (Ter) 15:55
+2018-07-23 10:55:59 DEBUG SlaService:191 - 6° HORA ADICIONADA: 2018-07-24 (Ter) 16:55
+2018-07-23 10:55:59 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 6
+2018-07-23 10:55:59 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 0
+2018-07-23 10:55:59 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-24 (Ter) 16:55
+2018-07-23 10:56:04 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-23 (Seg) 10:56
+2018-07-23 10:56:04 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-24 (Ter) 11:56
+2018-07-23 10:56:04 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-24 (Ter) 12:56
+2018-07-23 10:56:04 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-24 (Ter) 13:56
+2018-07-23 10:56:04 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-24 (Ter) 14:56
+2018-07-23 10:56:04 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-24 (Ter) 15:56
+2018-07-23 10:56:04 DEBUG SlaService:191 - 6° HORA ADICIONADA: 2018-07-24 (Ter) 16:56
+2018-07-23 10:56:04 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 6
+2018-07-23 10:56:04 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 0
+2018-07-23 10:56:04 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-24 (Ter) 16:56
+2018-07-23 10:56:04 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-23 (Seg) 10:56
+2018-07-23 10:56:04 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-24 (Ter) 11:56
+2018-07-23 10:56:04 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-24 (Ter) 12:56
+2018-07-23 10:56:04 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-24 (Ter) 13:56
+2018-07-23 10:56:04 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-24 (Ter) 14:56
+2018-07-23 10:56:04 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-24 (Ter) 15:56
+2018-07-23 10:56:04 DEBUG SlaService:191 - 6° HORA ADICIONADA: 2018-07-24 (Ter) 16:56
+2018-07-23 10:56:04 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 6
+2018-07-23 10:56:04 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 0
+2018-07-23 10:56:04 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-24 (Ter) 16:56
+2018-07-23 10:56:45 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-23 (Seg) 10:56
+2018-07-23 10:56:45 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-24 (Ter) 20:30
+2018-07-23 10:56:45 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-24 (Ter) 21:30
+2018-07-23 10:56:45 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-24 (Ter) 22:30
+2018-07-23 10:56:45 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-24 (Ter) 23:30
+2018-07-23 10:56:45 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-31 (Ter) 20:30
+2018-07-23 10:56:45 DEBUG SlaService:191 - 6° HORA ADICIONADA: 2018-07-31 (Ter) 21:30
+2018-07-23 10:56:45 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 6
+2018-07-23 10:56:45 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 2
+2018-07-23 10:56:45 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-31 (Ter) 21:30
+2018-07-23 11:01:52 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-23 (Seg) 11:01
+2018-07-23 11:01:52 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-24 (Ter) 20:30
+2018-07-23 11:01:52 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-24 (Ter) 21:30
+2018-07-23 11:01:52 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-24 (Ter) 22:30
+2018-07-23 11:01:52 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-24 (Ter) 23:30
+2018-07-23 11:01:52 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-31 (Ter) 20:30
+2018-07-23 11:01:52 DEBUG SlaService:191 - 6° HORA ADICIONADA: 2018-07-31 (Ter) 21:30
+2018-07-23 11:01:52 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 6
+2018-07-23 11:01:52 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 2
+2018-07-23 11:01:52 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-31 (Ter) 21:30
+2018-07-23 11:03:38 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-23 (Seg) 11:03
+2018-07-23 11:03:38 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-24 (Ter) 12:03
+2018-07-23 11:03:38 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-24 (Ter) 13:03
+2018-07-23 11:03:38 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-24 (Ter) 14:03
+2018-07-23 11:03:38 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-24 (Ter) 15:03
+2018-07-23 11:03:38 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-24 (Ter) 16:03
+2018-07-23 11:03:38 DEBUG SlaService:191 - 6° HORA ADICIONADA: 2018-07-24 (Ter) 17:03
+2018-07-23 11:03:38 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 6
+2018-07-23 11:03:38 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 0
+2018-07-23 11:03:38 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-24 (Ter) 17:03
+2018-07-23 11:04:05 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-23 (Seg) 11:04
+2018-07-23 11:04:05 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-24 (Ter) 12:04
+2018-07-23 11:04:05 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-24 (Ter) 13:04
+2018-07-23 11:04:05 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-24 (Ter) 14:04
+2018-07-23 11:04:05 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-24 (Ter) 15:04
+2018-07-23 11:04:05 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-24 (Ter) 16:04
+2018-07-23 11:04:05 DEBUG SlaService:191 - 6° HORA ADICIONADA: 2018-07-24 (Ter) 17:04
+2018-07-23 11:04:05 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 6
+2018-07-23 11:04:05 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 0
+2018-07-23 11:04:05 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-24 (Ter) 17:04
+2018-07-23 11:04:07 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-23 (Seg) 11:04
+2018-07-23 11:04:07 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-24 (Ter) 12:04
+2018-07-23 11:04:07 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-24 (Ter) 13:04
+2018-07-23 11:04:07 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-24 (Ter) 14:04
+2018-07-23 11:04:07 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-24 (Ter) 15:04
+2018-07-23 11:04:07 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-24 (Ter) 16:04
+2018-07-23 11:04:07 DEBUG SlaService:191 - 6° HORA ADICIONADA: 2018-07-24 (Ter) 17:04
+2018-07-23 11:04:07 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 6
+2018-07-23 11:04:07 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 0
+2018-07-23 11:04:07 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-24 (Ter) 17:04
+2018-07-24 08:38:02 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 08:38
+2018-07-24 08:38:02 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-24 (Ter) 09:38
+2018-07-24 08:38:02 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-24 (Ter) 10:38
+2018-07-24 08:38:02 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-24 (Ter) 11:38
+2018-07-24 08:38:02 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-24 (Ter) 12:38
+2018-07-24 08:38:02 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-24 (Ter) 13:38
+2018-07-24 08:38:02 DEBUG SlaService:191 - 6° HORA ADICIONADA: 2018-07-24 (Ter) 14:38
+2018-07-24 08:38:02 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 6
+2018-07-24 08:38:02 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 1
+2018-07-24 08:38:02 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-24 (Ter) 14:38
+2018-07-24 08:39:06 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 08:39
+2018-07-24 08:39:06 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-24 (Ter) 09:39
+2018-07-24 08:39:06 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-24 (Ter) 10:39
+2018-07-24 08:39:06 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-24 (Ter) 11:39
+2018-07-24 08:39:06 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-24 (Ter) 12:39
+2018-07-24 08:39:06 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-24 (Ter) 13:39
+2018-07-24 08:39:06 DEBUG SlaService:191 - 6° HORA ADICIONADA: 2018-07-24 (Ter) 14:39
+2018-07-24 08:39:06 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 6
+2018-07-24 08:39:06 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 1
+2018-07-24 08:39:06 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-24 (Ter) 14:39
+2018-07-24 08:39:33 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 08:39
+2018-07-24 08:39:33 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-25 (Qua) 09:39
+2018-07-24 08:39:33 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-25 (Qua) 10:39
+2018-07-24 08:39:33 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-25 (Qua) 11:39
+2018-07-24 08:39:33 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-25 (Qua) 12:39
+2018-07-24 08:39:33 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-25 (Qua) 13:39
+2018-07-24 08:39:33 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-24 08:39:33 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 0
+2018-07-24 08:39:33 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-25 (Qua) 13:39
+2018-07-24 08:42:16 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 08:42
+2018-07-24 08:42:16 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-25 (Qua) 09:42
+2018-07-24 08:42:16 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-25 (Qua) 10:42
+2018-07-24 08:42:16 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-25 (Qua) 11:42
+2018-07-24 08:42:16 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-25 (Qua) 12:42
+2018-07-24 08:42:16 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-25 (Qua) 13:42
+2018-07-24 08:42:16 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-24 08:42:16 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 0
+2018-07-24 08:42:16 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-25 (Qua) 13:42
+2018-07-24 08:45:16 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 08:45
+2018-07-24 08:45:16 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-25 (Qua) 09:45
+2018-07-24 08:45:16 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-25 (Qua) 10:45
+2018-07-24 08:45:16 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-25 (Qua) 11:45
+2018-07-24 08:45:16 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-25 (Qua) 12:45
+2018-07-24 08:45:16 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-25 (Qua) 13:45
+2018-07-24 08:45:16 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-24 08:45:16 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 0
+2018-07-24 08:45:16 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-25 (Qua) 13:45
+2018-07-24 08:46:49 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 08:46
+2018-07-24 08:46:49 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-25 (Qua) 09:46
+2018-07-24 08:46:49 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-25 (Qua) 10:46
+2018-07-24 08:46:49 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-25 (Qua) 11:46
+2018-07-24 08:46:49 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-25 (Qua) 12:46
+2018-07-24 08:46:49 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-25 (Qua) 13:46
+2018-07-24 08:46:49 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-24 08:46:49 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 0
+2018-07-24 08:46:49 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-25 (Qua) 13:46
+2018-07-24 08:47:24 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 08:47
+2018-07-24 08:52:38 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-25 (Qua) 09:47
+2018-07-24 08:52:38 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-25 (Qua) 10:47
+2018-07-24 08:52:38 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-25 (Qua) 11:47
+2018-07-24 08:52:38 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-25 (Qua) 12:47
+2018-07-24 08:52:38 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-25 (Qua) 13:47
+2018-07-24 08:52:38 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-24 08:52:38 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 0
+2018-07-24 08:52:44 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-25 (Qua) 13:47
+2018-07-24 08:52:56 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 08:52
+2018-07-24 09:10:54 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-25 (Qua) 09:52
+2018-07-24 09:10:54 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-25 (Qua) 10:52
+2018-07-24 09:10:54 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-25 (Qua) 11:52
+2018-07-24 09:10:54 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-25 (Qua) 12:52
+2018-07-24 09:10:54 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-25 (Qua) 13:52
+2018-07-24 09:10:54 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-24 09:10:54 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 0
+2018-07-24 09:10:54 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-25 (Qua) 13:52
+2018-07-24 09:11:01 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 09:11
+2018-07-24 09:11:47 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-25 (Qua) 10:11
+2018-07-24 09:11:47 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-25 (Qua) 11:11
+2018-07-24 09:11:47 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-25 (Qua) 12:11
+2018-07-24 09:11:47 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-25 (Qua) 13:11
+2018-07-24 09:11:47 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-25 (Qua) 14:11
+2018-07-24 09:11:47 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-24 09:11:47 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 0
+2018-07-24 09:12:03 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-25 (Qua) 14:11
+2018-07-24 09:12:28 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 09:12
+2018-07-24 12:22:07 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-25 (Qua) 10:12
+2018-07-24 12:26:17 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 12:26
+2018-07-24 12:26:17 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-25 (Qua) 13:26
+2018-07-24 12:26:17 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-25 (Qua) 14:26
+2018-07-24 12:26:17 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-25 (Qua) 15:26
+2018-07-24 12:26:17 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-25 (Qua) 16:26
+2018-07-24 12:26:17 DEBUG SlaService:267 - DIFERENCA: 34
+2018-07-24 12:26:17 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-08-01 (Qua) 08:26
+2018-07-24 12:26:17 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-24 12:26:17 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 1
+2018-07-24 12:26:17 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-08-01 (Qua) 08:26
+2018-07-24 12:27:47 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 12:27
+2018-07-24 12:27:47 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-25 (Qua) 13:27
+2018-07-24 12:27:47 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-25 (Qua) 14:27
+2018-07-24 12:27:47 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-25 (Qua) 15:27
+2018-07-24 12:27:47 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-25 (Qua) 16:27
+2018-07-24 12:27:47 DEBUG SlaService:267 - DIFERENCA: 33
+2018-07-24 12:27:47 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-08-01 (Qua) 08:27
+2018-07-24 12:27:47 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-24 12:27:47 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 1
+2018-07-24 12:27:47 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-08-01 (Qua) 08:27
+2018-07-24 12:29:17 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 12:29
+2018-07-24 12:29:17 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-25 (Qua) 13:29
+2018-07-24 12:29:17 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-25 (Qua) 14:29
+2018-07-24 12:29:17 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-25 (Qua) 15:29
+2018-07-24 12:29:17 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-25 (Qua) 16:29
+2018-07-24 12:29:17 DEBUG SlaService:267 - DIFERENCA: 31
+2018-07-24 12:29:17 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-08-01 (Qua) 08:29
+2018-07-24 12:29:17 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-24 12:29:17 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 1
+2018-07-24 12:29:17 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-08-01 (Qua) 08:29
+2018-07-24 12:31:41 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 12:30
+2018-07-24 12:55:55 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 12:55
+2018-07-24 12:58:47 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-25 (Qua) 09:00
+2018-07-24 12:58:52 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-25 (Qua) 09:00
+2018-07-24 12:58:52 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-25 (Qua) 09:00
+2018-07-24 12:58:52 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-25 (Qua) 09:00
+2018-07-24 12:58:52 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-25 (Qua) 09:00
+2018-07-24 12:58:52 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-24 12:58:52 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 0
+2018-07-24 12:58:52 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-25 (Qua) 09:00
+2018-07-24 13:07:24 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 13:07
+2018-07-24 13:07:24 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-25 (Qua) 14:07
+2018-07-24 13:07:24 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-25 (Qua) 15:07
+2018-07-24 13:07:24 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-25 (Qua) 16:07
+2018-07-24 13:07:24 DEBUG SlaService:266 - DIFERENCA: 53
+2018-07-24 13:07:24 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-08-01 (Qua) 08:07
+2018-07-24 13:07:24 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-08-01 (Qua) 09:07
+2018-07-24 13:07:24 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-24 13:07:24 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 1
+2018-07-24 13:07:24 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-08-01 (Qua) 09:07
+2018-07-24 13:14:11 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 13:13
+2018-07-24 13:35:22 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-25 (Qua) 14:13
+2018-07-24 13:35:22 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-25 (Qua) 15:13
+2018-07-24 13:35:22 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-25 (Qua) 16:13
+2018-07-24 13:35:22 DEBUG SlaService:266 - DIFERENCA: 47
+2018-07-24 13:35:22 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-08-01 (Qua) 08:13
+2018-07-24 13:35:22 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-08-01 (Qua) 09:13
+2018-07-24 13:35:22 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-24 13:35:22 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 1
+2018-07-24 13:35:22 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-08-01 (Qua) 09:13
+2018-07-24 13:39:00 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 13:38
+2018-07-24 13:39:00 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-25 (Qua) 09:00
+2018-07-24 13:39:00 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-25 (Qua) 09:00
+2018-07-24 13:39:00 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-25 (Qua) 09:00
+2018-07-24 13:39:00 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-25 (Qua) 09:00
+2018-07-24 13:39:00 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-25 (Qua) 09:00
+2018-07-24 13:39:00 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-24 13:39:00 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 0
+2018-07-24 13:39:00 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-25 (Qua) 09:00
+2018-07-24 13:41:37 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 13:41
+2018-07-24 13:52:44 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-25 (Qua) 09:00
+2018-07-24 14:01:06 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 14:01
+2018-07-24 14:10:32 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 14:09
+2018-07-24 14:14:19 DEBUG SlaService:194 - 1° HORA ADICIONADA: 2018-07-25 (Qua) 09:00
+2018-07-24 14:14:19 DEBUG SlaService:194 - 2° HORA ADICIONADA: 2018-07-25 (Qua) 10:00
+2018-07-24 14:14:19 DEBUG SlaService:194 - 3° HORA ADICIONADA: 2018-07-25 (Qua) 11:00
+2018-07-24 14:14:19 DEBUG SlaService:194 - 4° HORA ADICIONADA: 2018-07-25 (Qua) 12:00
+2018-07-24 14:14:19 DEBUG SlaService:194 - 5° HORA ADICIONADA: 2018-07-25 (Qua) 13:00
+2018-07-24 14:14:19 DEBUG SlaService:198 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-24 14:14:19 DEBUG SlaService:199 - QUANTIDADE DE DIAS UTEIS: 0
+2018-07-24 14:14:19 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-25 (Qua) 13:00
+2018-07-24 14:16:43 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 14:16
+2018-07-24 14:16:43 DEBUG SlaService:194 - 1° HORA ADICIONADA: 2018-07-24 (Ter) 09:00
+2018-07-24 14:16:43 DEBUG SlaService:194 - 2° HORA ADICIONADA: 2018-07-24 (Ter) 10:00
+2018-07-24 14:16:43 DEBUG SlaService:194 - 3° HORA ADICIONADA: 2018-07-24 (Ter) 11:00
+2018-07-24 14:16:43 DEBUG SlaService:194 - 4° HORA ADICIONADA: 2018-07-24 (Ter) 12:00
+2018-07-24 14:16:43 DEBUG SlaService:194 - 5° HORA ADICIONADA: 2018-07-24 (Ter) 13:00
+2018-07-24 14:16:43 DEBUG SlaService:198 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-24 14:16:43 DEBUG SlaService:199 - QUANTIDADE DE DIAS UTEIS: 1
+2018-07-24 14:16:43 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-24 (Ter) 13:00
+2018-07-24 14:25:57 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 14:25
+2018-07-24 14:25:57 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-24 (Ter) 15:25
+2018-07-24 14:25:57 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-24 (Ter) 16:25
+2018-07-24 14:25:57 DEBUG SlaService:268 - DIFERENCA: 35
+2018-07-24 14:25:57 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-31 (Ter) 08:25
+2018-07-24 14:25:57 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-31 (Ter) 09:25
+2018-07-24 14:25:57 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-31 (Ter) 10:25
+2018-07-24 14:25:57 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-24 14:25:57 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 2
+2018-07-24 14:25:57 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-31 (Ter) 10:25
+2018-07-24 14:26:42 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 14:26
+2018-07-24 14:26:42 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-25 (Qua) 09:00
+2018-07-24 14:26:42 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-25 (Qua) 10:00
+2018-07-24 14:26:42 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-25 (Qua) 11:00
+2018-07-24 14:26:42 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-25 (Qua) 12:00
+2018-07-24 14:26:42 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-25 (Qua) 13:00
+2018-07-24 14:26:42 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-24 14:26:42 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 1
+2018-07-24 14:26:42 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-25 (Qua) 13:00
+2018-07-24 21:02:20 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 21:02
+2018-07-24 21:02:20 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-25 (Qua) 09:00
+2018-07-24 21:02:20 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-25 (Qua) 10:00
+2018-07-24 21:02:20 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-25 (Qua) 11:00
+2018-07-24 21:02:20 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-25 (Qua) 12:00
+2018-07-24 21:02:20 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-25 (Qua) 13:00
+2018-07-24 21:02:20 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-24 21:02:20 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 1
+2018-07-24 21:02:20 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-25 (Qua) 13:00
+2018-07-24 21:04:20 DEBUG SlaService:74 - ABERTURA DO CHAMADO: 2018-07-24 (Ter) 21:04
+2018-07-24 21:04:20 DEBUG SlaService:191 - 1° HORA ADICIONADA: 2018-07-24 (Ter) 22:04
+2018-07-24 21:04:20 DEBUG SlaService:268 - DIFERENCA: 56
+2018-07-24 21:04:20 DEBUG SlaService:191 - 2° HORA ADICIONADA: 2018-07-31 (Ter) 08:04
+2018-07-24 21:04:20 DEBUG SlaService:191 - 3° HORA ADICIONADA: 2018-07-31 (Ter) 09:04
+2018-07-24 21:04:20 DEBUG SlaService:191 - 4° HORA ADICIONADA: 2018-07-31 (Ter) 10:04
+2018-07-24 21:04:20 DEBUG SlaService:191 - 5° HORA ADICIONADA: 2018-07-31 (Ter) 11:04
+2018-07-24 21:04:20 DEBUG SlaService:195 - QUANTIDADE DE HORAS UTEIS: 5
+2018-07-24 21:04:20 DEBUG SlaService:196 - QUANTIDADE DE DIAS UTEIS: 2
+2018-07-24 21:04:20 DEBUG SlaService:109 - PRAZO DE ATEDIMENTO DO CHAMADO: 2018-07-31 (Ter) 11:04
